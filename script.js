@@ -1,4 +1,4 @@
-//document.getElementById('searchScreen').style.display = 'none';
+document.getElementById('searchScreen').style.display = 'none';
 document.getElementById('buttonValidation').addEventListener('click',
 function() {
     var guessWord = document.getElementById('word').value.toUpperCase();
@@ -52,6 +52,8 @@ function() {
                     document.getElementById('firstScreen').style.display = 'none';
                     document.getElementById('result').textContent = 'Gagné !';
                     document.getElementById('result').style.display = 'block';
+                    document.getElementById('searchScreen').style.display = 'none';
+                    
                     }
                 } else {
                 var points = document.getElementById('points').textContent;
@@ -59,14 +61,11 @@ function() {
                 document.getElementById('points').textContent = newPoints;
                 document.getElementById('letter').value = '';
 
-                if(newPoints = 0) {
+                if(newPoints == 0) {
                     document.getElementById('searchScreen').style.display = 'none';
                     document.getElementById('result').textContent = 'Perdu !';
                     document.getElementById('result').style.display = 'block';
                 }
-
             }
-
-            }
-        )
-})
+        });
+    });
