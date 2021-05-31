@@ -66,6 +66,7 @@ function() {
                     
                     }
                 } else {
+                    document.getElementById('message').style.display = 'none';
                 var points = document.getElementById('points').textContent;
                 var newPoints = points -1;
                 document.getElementById('points').textContent = newPoints;
