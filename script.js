@@ -8,8 +8,13 @@ function() {
             return true;
         }
     });
+        
         if(letterCheck.length > 0) {
             document.getElementById('message').textContent = "C'est un pendu, pas une calculatrice...";
+        } else if(guessWord == '') {
+            document.getElementById('message').textContent = 'Mais... faut écrire !'
+            return false;
+        
         } else {
             document.getElementById('firstScreen').style.display = 'none';
             document.getElementById('searchScreen').style.display = 'block';
@@ -27,8 +32,13 @@ function() {
             var goodLetter;
             for(var i = 0; i<letterWord.length; i++) {
                 if(letterWord[i] === letterInput) {
+                    document.getElementById('message').style.display = 'none';
                     goodLetter = true;
                     break;
+                }else if(letterInput == '') {
+                        document.getElementById('message').textContent = "Non mais sérieux ? Comment tu veux deviner si tu n'écris rien ?";
+                        document.getElementById('message').style.display = 'block';
+                        return false;
                 } else {
                     goodLetter = false;
                 }
